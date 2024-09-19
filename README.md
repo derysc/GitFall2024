@@ -1,5 +1,6 @@
 # GitFall2024
 
+Derys Coreas-Escobar, derysc
 
 This is the starter code for your Git Assignment.
 
