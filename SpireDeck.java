@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class test
+public class SpireDeck
 {
 
     public static Scanner scan;
@@ -12,6 +12,7 @@ public class test
     public static String[] invalidCards = new String[10];
     public static int invalidCount = 0;
     public static int[] histogram = new int[6];
+
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
@@ -32,13 +33,33 @@ public class test
             return;
         }
         while (scan.hasNext()) {
-            if (invalidCards[9].isEmpty() != true) {
+            if (invalidCards[9] != null) {
+                System.out.println("SpireDeck_" + deckId + "(VOID).pdf");
                 System.out.println("This deck has 10 invalid cards");
+                for (int i = 0; i < invalidCards.length; i++) {
+                    System.out.println(invalidCards[i]);
+                }
+                return;
+            }
+            if (cardCount > 1000) {
                 return;
             }
             costTally(scan.next());
         }
 
+        System.out.println("SpireDeck_" + deckId + ".pdf");
+        System.out.println("Total energy cost of the deck: " + totalCost + " energies");
+        System.out.println("Histogram array starting from 1-6 left to right: " + Arrays.toString(histogram));
+        System.out.println("This deck had " + invalidCount + " cards with invalid energy values");
+        if (invalidCount == 0) {
+            return;
+        }
+        for (int i = 0; i < invalidCards.length; i++) {
+            if (invalidCards[i] == null) {
+                return;
+            }
+            System.out.println(invalidCards[i]);
+        }
 
 
     }
@@ -56,7 +77,6 @@ public class test
         } else {
             invalidCards[invalidCount] = cardInfo;
         }
-        System.out.println(totalCost);
 
     }
 }
