@@ -1,0 +1,24 @@
+
+a.) On my repository, there have been 13 total commits. 10 by Esteban and 3 by me
+
+b.) The .gitignore was last modified 3 commits ago
+
+c.) For files that you want to know before that certain date you use git log --until="date". If you want to know the files after a date you would use git log --since="date"
+
+d.) They have been modified 3 times
+
+e.) 0 addition operations were used it seems like. The REMOVEME file was never added to the repository it seems
+
+f.) git log shows the commit history where git status shows the current working directory and shows the staging area as well
+
+g.) git shortlog shows the commit history, but only shows the subject line of the comments left with each commit. It also shows the name of the person that made said commits
+
+h.) git log Main.java
+
+i.) git log --follow -- Main.java
+
+j.) git log --grep="account"
+
+k.) git log --author="<insert author>"
+
+i.) git log --author="Lauren" --since="01/05/2014" --until="01/14/2024"
